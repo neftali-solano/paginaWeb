@@ -1,0 +1,722 @@
+/* ==========================================================================
+   ÍNDICE DE ESTILOS
+   ==========================================================================
+   1. VARIABLES Y RESET BÁSICO
+   2. FONDOS GLOBALES
+   3. ESTRUCTURA PRINCIPAL (Header, Main, Footer)
+   4. COMPONENTES GLOBALES (Tarjetas, Textos, Botones)
+   5. MÓDULO DEL CARRITO (Icono, Ventanilla y Página)
+   6. SECCIONES ESPECÍFICAS (Contacto, CEO y Reseñas)
+   7. ANIMACIONES GLOBALES
+   8. DISEÑO RESPONSIVO (Móvil)
+   ========================================================================== */
+
+/* ==========================================================================
+   1. VARIABLES Y RESET BÁSICO
+   ========================================================================== */
+:root {
+    --verde-jn: #66E331; 
+    --verde-jn-hover: #54c227;
+    --negro-puro: #000000;
+    --fondo-oscuro: #0a0a0a; 
+    --fondo-tarjeta: #1a1a1a; 
+    --texto-blanco: #ffffff;
+    --texto-gris: #a0a0a0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Fundamental para evitar desbordamientos */
+}
+
+html {
+    scroll-behavior: smooth; 
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    background-color: transparent; 
+    color: var(--texto-blanco);
+    line-height: 1.6;
+    overflow-x: hidden; /* Oculta desbordamiento horizontal accidental */
+}
+
+/* ==========================================================================
+   2. FONDOS GLOBALES (VIDEO)
+   ========================================================================== */
+.video-fondo-global {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    object-fit: cover;
+    z-index: -2; 
+}
+
+.capa-oscura-global {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); 
+    z-index: -1; 
+}
+
+/* ==========================================================================
+   3. ESTRUCTURA PRINCIPAL (Header, Main, Footer)
+   ========================================================================== */
+/* --- Header y Navegación --- */
+header {
+    position: relative; 
+    z-index: 10;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+}
+
+.logo-img {
+    width: 150px; 
+    height: auto;
+    animation: aparecer 1.5s ease-out;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--texto-blanco); 
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--verde-jn); 
+}
+
+/* --- Contenedor Main --- */
+main {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    padding: 15px 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#servicios, #portafolio-artistas, #cubrimiento-eventos {
+    padding: 40px 0; 
+}
+
+/* --- Footer --- */
+footer {
+    background-color: rgb(0, 0, 0);
+    color: rgb(184, 184, 186);
+    text-align: center;
+    padding: 25px 20px;
+    font-size: 12px;
+    border-top: 1px solid rgb(24, 24, 24);
+    position: relative;
+    z-index: 10;
+}
+
+/* ==========================================================================
+   4. COMPONENTES GLOBALES (Tarjetas, Textos, Botones)
+   ========================================================================== */
+/* --- Textos y Títulos --- */
+.titulo-seccion, main > h2 {
+    font-size: 2rem;
+    color: var(--texto-blanco);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* --- Botones --- */
+.btn-comprar, .btn-ver-mas, .btn-contactar, .btn-adquirir {
+    display: block;
+    text-align: center;
+    margin: 0 20px 20px;
+    padding: 12px 0;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    font-family: inherit;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    background-color: var(--verde-jn); 
+    color: var(--negro-puro);
+}
+
+.btn-adquirir {
+    width: calc(100% - 40px);
+}
+
+.btn-comprar:hover, .btn-ver-mas:hover, .btn-contactar:hover, .btn-adquirir:hover {
+    background-color: var(--verde-jn-hover);
+    transform: scale(1.02); 
+}
+
+/* --- Precios --- */
+.precio-servicio {
+    color: var(--texto-blanco); 
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 15px 20px;
+    text-align: center;
+    margin-top: auto; /* Empuja el precio hacia la parte inferior */
+}
+
+/* --- Contenedores de Tarjetas --- */
+.contenedor-servicios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.contenedor-cubrimiento, .contenedor-artistas {
+    display: flex;
+    flex-direction: column;
+    gap: 50px; 
+    max-width: 1000px; 
+    margin: 0 auto; 
+}
+
+/* --- Estructura y Diseño de Tarjetas --- */
+.tarjeta-servicio, .tarjeta-artista, .tarjeta-cubrimiento {
+    background-color: var(--fondo-tarjeta);
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta-servicio {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.tarjeta-artista, .tarjeta-cubrimiento {
+    padding: 40px;
+    border-left: 8px solid var(--verde-jn);
+}
+
+.tarjeta-cubrimiento {
+    display: flex;
+    flex-direction: column;
+    height: 100%; 
+}
+
+.tarjeta-servicio:hover, .tarjeta-artista:hover, .tarjeta-cubrimiento:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(102, 227, 49, 0.2); 
+}
+
+/* --- Contenido Interno de Tarjetas --- */
+.info-cubrimiento {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; 
+}
+
+.info-cubrimiento p {
+    flex-grow: 1; 
+    margin-bottom: 25px;
+}
+
+.tarjeta-servicio h3 {
+    padding: 20px 20px 10px;
+    font-size: 1.2rem;
+    color: var(--texto-blanco);
+}
+
+.tarjeta-servicio p {
+    padding: 0 20px 20px;
+    font-size: 0.95rem;
+    color: var(--texto-gris);
+    flex-grow: 1;
+}
+
+.info-artista h3, .info-cubrimiento h3 {
+    color: var(--verde-jn);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.info-artista p, .info-cubrimiento p {
+    color: var(--texto-gris);
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+/* --- Multimedia en Tarjetas --- */
+.tarjeta-servicio img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.galeria-artista, .galeria-cubrimiento {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.galeria-artista img, .galeria-artista video, .galeria-cubrimiento img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5; 
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 8px;
+    background-color: #000; 
+}
+
+/* ==========================================================================
+   5. MÓDULO DEL CARRITO (Icono, Ventanilla y Página)
+   ========================================================================== */
+/* --- Icono del Header --- */
+.contenedor-icono-carrito {
+    position: relative;
+}
+
+.icono-carrito {
+    display: flex;
+    align-items: center;
+    color: var(--texto-blanco);
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.icono-carrito:hover {
+    color: var(--verde-jn);
+    transform: scale(1.1); 
+}
+
+#contador-carrito {
+    position: absolute;
+    top: -8px;
+    right: -12px;
+    background-color: var(--verde-jn);
+    color: var(--negro-puro);
+    font-size: 0.75rem;
+    font-weight: bold;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s ease;
+}
+
+#contador-carrito.oculto {
+    display: none; 
+}
+
+.animar-bolita {
+    animation: latido-carrito 0.3s ease-out;
+}
+
+/* --- Ventanilla Desplegable (Dropdown) --- */
+.carrito-dropdown {
+    position: absolute;
+    top: 150%;
+    right: 0;
+    width: 320px;
+    background-color: var(--fondo-tarjeta);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    padding: 15px;
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: all 0.3s ease;
+}
+
+.contenedor-icono-carrito:hover .carrito-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.carrito-dropdown-header h4 {
+    color: var(--texto-blanco);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.carrito-dropdown-body {
+    max-height: 250px;
+    overflow-y: auto;
+    margin-bottom: 15px;
+}
+
+.carrito-dropdown-body::-webkit-scrollbar { width: 5px; }
+.carrito-dropdown-body::-webkit-scrollbar-thumb { background: var(--verde-jn); border-radius: 5px; }
+
+.item-carrito-mini {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    padding-bottom: 10px;
+}
+
+.item-carrito-mini img {
+    width: 50px;
+    height: 50px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+.item-carrito-mini-info h5 {
+    color: var(--texto-blanco);
+    font-size: 0.85rem;
+    margin-bottom: 5px;
+}
+
+.item-carrito-mini-info p {
+    color: var(--verde-jn);
+    font-size: 0.95rem;
+    font-weight: bold;
+}
+
+.carrito-dropdown-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 15px;
+}
+
+.carrito-total {
+    display: flex;
+    justify-content: space-between;
+    color: var(--texto-blanco);
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.btn-ir-carrito {
+    display: block;
+    text-align: center;
+    background-color: var(--verde-jn);
+    color: var(--negro-puro);
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn-ir-carrito:hover {
+    background-color: var(--verde-jn-hover);
+}
+
+/* --- Página Principal del Carrito --- */
+#carrito-compras {
+    padding: 40px 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#carrito-compras .titulo.seccion {
+    font-size: 0.85rem;
+    color: var(--texto-gris);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 40px;
+    font-weight: 500;
+    text-align: center;
+    width: 100%;
+}
+
+.contenedor-carrito {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 50vh; 
+}
+
+.tarjeta-carrito {
+    background-color: var(--fondo-tarjeta);
+    border-radius: 12px;
+    padding: 50px 40px; 
+    width: 100%;
+    max-width: 850px; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    border-top: 4px solid var(--verde-jn); 
+    text-align: center;
+}
+
+.contenido-carrito {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contenido-carrito img {
+    width: 120px; 
+    height: auto;
+    margin-bottom: 25px;
+    opacity: 0.9;
+}
+
+.contenido-carrito h1 {
+    font-size: 1.8rem;
+    color: var(--texto-blanco);
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.contenido-carrito p {
+    font-size: 1rem;
+    color: var(--texto-gris);
+    margin-bottom: 40px;
+    line-height: 1.5;
+}
+
+.contenido-carrito .btn-comprar {
+    display: inline-block;
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    margin: 0;
+    width: auto;
+    min-width: 250px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ==========================================================================
+   6. SECCIONES ESPECÍFICAS (Contacto, CEO y Reseñas)
+   ========================================================================== */
+/* --- Sección CEO y Contacto --- */
+.tarjeta-contacto {
+    display: grid;
+    grid-template-columns: 1fr 2fr; 
+    gap: 40px;
+    align-items: center;
+}
+
+.perfil-ceo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-ceo {
+    width: 100%;
+    max-width: 290px;
+    aspect-ratio: 1 / 1; 
+    border-radius: 50%; 
+    border: 3px solid rgba(255, 255, 255, 0.1); 
+    object-fit: cover; 
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+.redes-contacto {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.btn-red {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--negro-puro);
+    background-color: var(--verde-jn);
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    flex: 1; 
+}
+
+.btn-red:hover {
+    transform: scale(1.05);
+    background-color: var(--verde-jn-hover);
+}
+
+/* --- Formulario y Reseñas --- */
+.tarjeta-resenas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: start;
+}
+
+.calificacion-actual h3, .formulario-resena h3 {
+    color: var(--verde-jn);
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.estrellas-grandes {
+    font-size: 3rem;
+    color: #FFD700; 
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+    letter-spacing: 5px;
+}
+
+.media-estrella {
+    background: linear-gradient(90deg, #FFD700 50%, #444 50%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nota-promedio {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--texto-blanco);
+    margin: 10px 0;
+}
+
+.input-form {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: rgba(255, 255, 255, 0.05); 
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: var(--texto-blanco);
+    font-family: inherit;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.input-form:focus {
+    border-color: var(--verde-jn);
+}
+
+textarea {
+    resize: none;
+}
+
+/* --- Lógica de Interacción de Estrellas --- */
+.calificar-estrellas {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    color: var(--texto-gris);
+}
+
+.rating {
+    display: flex;
+    flex-direction: row-reverse; 
+    justify-content: flex-end;
+}
+
+.rating input {
+    display: none;
+}
+
+.rating label {
+    font-size: 2rem;
+    color: #444;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.rating label:hover,
+.rating label:hover ~ label,
+.rating input:checked ~ label {
+    color: #FFD700;
+}
+
+/* ==========================================================================
+   7. ANIMACIONES GLOBALES
+   ========================================================================== */
+@keyframes aparecer {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes latido-carrito {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.4); }
+    100% { transform: scale(1); }
+}
+
+/* ==========================================================================
+   8. DISEÑO RESPONSIVO (Móvil)
+   ========================================================================== */
+@media (max-width: 768px) {
+    /* 1. Header y Menú */
+    header {
+        flex-direction: column; 
+        padding: 15px;
+        gap: 15px;
+    }
+    
+    nav ul {
+        flex-wrap: wrap; 
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .logo-img {
+        width: 120px; 
+    }
+
+    /* 2. Contenedores y Espacios */
+    main {
+        padding: 15px;
+    }
+
+    .titulo-seccion, main > h2 {
+        font-size: 1.5rem;
+        margin-bottom: 25px;
+    }
+
+    /* 3. Reorganización de Cuadrículas a 1 Columna */
+    .contenedor-servicios {
+        grid-template-columns: 1fr;
+    }
+
+    .galeria-artista, .galeria-cubrimiento {
+        grid-template-columns: 1fr; 
+        gap: 10px;
+    }
+
+    .tarjeta-contacto, .tarjeta-resenas {
+        grid-template-columns: 1fr;
+    }
+
+    /* 4. Ajustes Internos de Tarjetas */
+    .tarjeta-artista, .tarjeta-cubrimiento {
+        padding: 15px;
+    }
+
+    /* 5. Ajustes de Botones */
+    .btn-comprar, .btn-ver-mas, .btn-contactar, .btn-adquirir {
+        margin: 0 10px 15px;
+        width: calc(100% - 20px);
+    }
+}

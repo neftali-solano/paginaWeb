@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios - JN VISION</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <video autoplay loop muted playsinline class="video-fondo-global">
+        <source src="fotos y videos/logo_video.mp4" type="video/mp4">
+    </video>
+    <div class="capa-oscura-global"></div>
+
+    <header>
+        <a href="jnvision.html" class="logo-enlace">
+            <img src="fotos y videos/logo sin fondo.PNG" alt="Logotipo de JN VISION" class="logo-img">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="jnvision.html">Inicio</a></li>
+                <li><a href="artistas.html">Artistas</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                
+                <!-- MENÚ DEL CARRITO -->
+                <li class="contenedor-icono-carrito">
+                    <a href="carrito.html" class="icono-carrito" aria-label="Ver carrito">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="9" cy="21" r="1"></circle>
+                            <circle cx="20" cy="21" r="1"></circle>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                        </svg>
+                        <!-- La bolita inicia oculta (en 0) -->
+                        <span id="contador-carrito" style="display: none;">0</span>
+                    </a>
+                    
+                    <!-- VENTANILLA FLOTANTE -->
+                    <div class="carrito-dropdown">
+                        <div class="carrito-dropdown-header">
+                            <h4>Tu Carrito</h4>
+                        </div>
+                        
+                        <!-- Aquí JavaScript inyectará los productos al hacer clic -->
+                        <div class="carrito-dropdown-body" id="lista-carrito-hover">
+                            <p class="carrito-vacio">El carrito está vacío</p>
+                        </div>
+
+                        <div class="carrito-dropdown-footer">
+                            <div class="carrito-total">
+                                <span>Total:</span>
+                                <span id="total-carrito-hover">$0</span>
+                            </div>
+                            <a href="carrito.html" class="btn-ir-carrito">Ver Carrito Completo</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="cubrimiento-eventos">
+            <h2 class="titulo-seccion">Nuestros Servicios</h2>
+            <div class="contenedor-cubrimiento">
+
+                <article class="tarjeta-cubrimiento">
+                    <div class="galeria-cubrimiento">
+                        <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y29uY2llcnRvJTIwZW4lMjB2aXZvfGVufDB8fDB8fHww">
+                        <img src="https://st.depositphotos.com/1355276/4860/i/450/depositphotos_48600881-stock-photo-partying-people-during-a-live.jpg">
+                        <img src="https://s2.ppllstatics.com/mujerhoy/www/multimedia/202203/17/media/cortadas/apertura-party-kjgF-U1601347275536ie-1248x1248@MujerHoy.jpeg">
+                    </div>
+                    <div class="info-cubrimiento">
+                        <h3>CUBRIMIENTO DE EVENTOS</h3>
+                        <p>En <strong>JN VISION</strong> nos encargamos de que tu evento quede para la historia. Ofrecemos un despliegue técnico y audiovisual completo para conciertos, bodas, fiestas patronales y eventos corporativos...</p>
+                        <div class="precio-servicio">$3.600.000</div>
+                        <!-- CADA BOTÓN AHORA ENVÍA EL NOMBRE, PRECIO E IMAGEN -->
+                        <button class="btn-adquirir" onclick="agregarAlCarrito('Cubrimiento de Eventos', 3600000, 'https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y29uY2llcnRvJTIwZW4lMjB2aXZvfGVufDB8fDB8fHww')">Adquirir Servicio</button>
+                    </div>
+                </article>
+
+                <article class="tarjeta-cubrimiento">
+                    <div class="galeria-cubrimiento">
+                        <img src="https://i.ytimg.com/vi/-VucbhHMCrQ/maxresdefault.jpg">
+                        <img src="https://solsonstudio.com/wp-content/uploads/2025/01/pexels-donaldtong94-66134-scaled-1-1024x682.jpg">
+                        <img src="https://images.unsplash.com/photo-1601506521937-0121a7fc2a6b?q=80&w=740&auto=format&fit=crop">
+                    </div>
+                    <div class="info-cubrimiento">
+                        <h3>DIRECCIÓN Y PRODUCCIÓN AUDIOVISUAL</h3>
+                        <p>En <strong>JN VISION</strong> transformamos tus ideas en piezas visuales de alto impacto. Nos especializamos en la creación y dirección de videoclips musicales, spots publicitarios, resúmenes dinámicos y documentales...</p>
+                        <div class="precio-servicio">$400.000</div>
+                        <button class="btn-adquirir" onclick="agregarAlCarrito('Dirección Audiovisual', 400000, 'https://i.ytimg.com/vi/-VucbhHMCrQ/maxresdefault.jpg')">Adquirir Servicio</button>
+                    </div>
+                </article>
+
+                <article class="tarjeta-cubrimiento">
+                    <div class="galeria-cubrimiento">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqRlIkF-Zb93ihdvQBsgxezAmhz3bEjrlbuM3CWxvfkPDbh9nJSypykGsw&s=10">
+                        <img src="https://i.pinimg.com/564x/eb/21/e4/eb21e4e221d7aaa8dee8d74987c165c9.jpg">
+                        <img src="https://images.pexels.com/photos/11174748/pexels-photo-11174748.jpeg?cs=tinysrgb&dpr=1&w=500">
+                    </div>
+                    <div class="info-cubrimiento">
+                        <h3>FOTOGRAFÍA PROFESIONAL</h3>
+                        <p>En <strong>JN VISION</strong> capturamos la esencia de tus mejores momentos y proyectos con imágenes de la más alta resolución. Ofrecemos sesiones de fotografía comercial, retratos artísticos...</p>
+                        <div class="precio-servicio">$250.000</div>
+                        <button class="btn-adquirir" onclick="agregarAlCarrito('Fotografía Profesional', 250000, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqRlIkF-Zb93ihdvQBsgxezAmhz3bEjrlbuM3CWxvfkPDbh9nJSypykGsw&s=10')">Adquirir Servicio</button>
+                    </div>
+                </article>
+
+                <article class="tarjeta-cubrimiento">
+                    <div class="galeria-cubrimiento">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnYlZ497EE7uVNSNRW6r7pAoy4b2pz41B9INd8s__vyaspoA8N1JyWLiA&s=10">
+                        <img src="https://elements-resized.envatousercontent.com/elements-video-cover-images/files/452257335/HD.jpg?w=500&cf_fit=cover&q=85&format=auto&s=4779a93e62a3aab87cc8672216a9e946f7aea5b18c608b1c734a97461b155511">
+                        <img src="https://proyectoidis.org/wp-content/uploads/2016/10/vj5.jpg">
+                    </div>
+                    <div class="info-cubrimiento">
+                        <h3>DISEÑO GRÁFICO Y ANIMACIÓN VISUAL (VJ)</h3>
+                        <p>En <strong>JN VISION</strong> construimos la identidad de tu proyecto y le damos vida a tus escenarios. Nos encargamos de la creación de logos profesionales, diseño de flyers promocionales y visuales para shows...</p>
+                        <div class="precio-servicio">$80.000</div>
+                        <button class="btn-adquirir" onclick="agregarAlCarrito('Diseño Gráfico (VJ)', 80000, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnYlZ497EE7uVNSNRW6r7pAoy4b2pz41B9INd8s__vyaspoA8N1JyWLiA&s=10')">Adquirir Servicio</button>
+                    </div>
+                </article>
+
+                <article class="tarjeta-cubrimiento">
+                    <div class="galeria-cubrimiento">
+                        <img src="https://cdn0.bodas.com.mx/vendor/7060/3_2/960/jpg/img-6774_5_107060.jpeg">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcQGqMyckutO6tXEP2cP4JerxxCFl-pcoOGDxaJC-aJj3LaTy-l7j93UeR&s=10">
+                        <img src="https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=740&auto=format&fit=crop">
+                    </div>
+                    <div class="info-cubrimiento">
+                        <h3>PIROTECNIA Y EFECTOS ESPECIALES (FX)</h3>
+                        <p>En <strong>JN VISION</strong> elevamos la adrenalina de tus eventos al máximo nivel. Ofrecemos un servicio seguro y espectacular de pirotecnia y efectos especiales para conciertos, festivales y bodas...</p>
+                        <div class="precio-servicio">$550.000</div>
+                        <button class="btn-adquirir" onclick="agregarAlCarrito('Pirotecnia y FX', 550000, 'https://cdn0.bodas.com.mx/vendor/7060/3_2/960/jpg/img-6774_5_107060.jpeg')">Adquirir Servicio</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Derechos reservados. &copy; 2026 JN VISION</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - JN VISION</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <video autoplay loop muted playsinline class="video-fondo-global">
+        <source src="fotos y videos/logo_video.mp4" type="video/mp4">
+    </video>
+    <div class="capa-oscura-global"></div>
+
+    <header>
+        <a href="jnvision.html" class="logo-enlace">
+            <img src="fotos y videos/logo sin fondo.PNG" alt="Logotipo de JN VISION" class="logo-img">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="jnvision.html">Inicio</a></li>
+                <li><a href="artistas.html">Artistas</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+              
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="contacto-seccion">
+            <h2 class="titulo-seccion">Contáctanos</h2>
+
+            <div class="contenedor-cubrimiento"> 
+
+                <article class="tarjeta-cubrimiento tarjeta-contacto">
+                    <div class="perfil-ceo">
+                        <img src="fotos y videos/ceo.jpg" alt="Neftalí - CEO" class="img-ceo">
+                    </div>
+                    
+                    <div class="info-ceo">
+                        <h3>NEFTALÍ - CEO & FUNDADOR</h3>
+                        <p>
+                            Soy <strong>Neftalí</strong>, la mente creativa y desarrolladora detrás de <strong>JN VISION</strong>. 
+                            Nacimos con el propósito de fusionar la tecnología, el arte y la energía de los eventos en vivo para llevar la producción audiovisual a otro nivel. 
+                            Mi compromiso es garantizar que cada cliente, desde artistas vallenatos hasta grandes corporaciones, obtenga una experiencia visual inmersiva y un recuerdo cinematográfico impecable.
+                        </p>
+                        
+                        <div class="redes-contacto">
+                            <a href="https://wa.me/3005072290" target="_blank" class="btn-red whatsapp">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                WhatsApp
+                            </a>
+                            <a href="https://instagram.com/jnvision_" target="_blank" class="btn-red instagram">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                                Instagram
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="tarjeta-cubrimiento tarjeta-resenas">
+                    <div class="calificacion-actual">
+                        <h3>Calidad Garantizada</h3>
+                        <div class="estrellas-grandes">★★★★<span class="media-estrella">★</span></div>
+                        <div class="nota-promedio">4.5 / 5.0</div>
+                        <p>Basado en las reseñas de artistas y clientes que han confiado en nuestro despliegue técnico y audiovisual.</p>
+                    </div>
+
+                    <div class="formulario-resena">
+                        <h3>Déjanos tu reseña</h3>
+                        <form id="form-resenas">
+                            <input type="text" id="nombre-usuario" placeholder="Tu Nombre / Empresa" required class="input-form">
+                            
+                            <div class="calificar-estrellas">
+                                <span>Calificación:</span>
+                                <div class="rating">
+                                    <input type="radio" id="star5" name="rating" value="5" required/><label for="star5">★</label>
+                                    <input type="radio" id="star4" name="rating" value="4" /><label for="star4">★</label>
+                                    <input type="radio" id="star3" name="rating" value="3" /><label for="star3">★</label>
+                                    <input type="radio" id="star2" name="rating" value="2" /><label for="star2">★</label>
+                                    <input type="radio" id="star1" name="rating" value="1" /><label for="star1">★</label>
+                                </div>
+                            </div>
+
+                            <textarea id="texto-resena" placeholder="Cuéntanos tu experiencia..." rows="4" required class="input-form"></textarea>
+                            <button type="submit" class="btn-adquirir" style="width: 100%; margin: 0;">Enviar Reseña</button>
+                        </form>
+                    </div>
+                </article>            
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Derechos reservados. &copy; 2026 JN VISION</p>
+    </footer>
+</body>
+</html>
